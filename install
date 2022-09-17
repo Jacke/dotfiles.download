@@ -1,3 +1,13 @@
 #!/bin/bash
 
-echo "Wow. It's install mock"
+echo "Wow. It's an install mock for"
+
+case "$OSTYPE" in
+  solaris*) echo "SOLARIS" ;;
+  darwin*)  echo "OSX" ;;
+  linux*)   echo "LINUX" ;;
+  bsd*)     echo "BSD" ;;
+  msys*)    echo "WINDOWS" ;;
+  cygwin*)  echo "ALSO WINDOWS" ;;
+  *)        echo "unknown: $OSTYPE" ;;
+esac
