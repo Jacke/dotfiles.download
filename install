@@ -1,13 +1,11 @@
 #!/bin/bash
 
-echo "Wow. It's an install mock for"
-
 case "$OSTYPE" in
-  solaris*) echo "SOLARIS" ;;
-  darwin*)  echo "OSX" ;;
-  linux*)   echo "LINUX" ;;
-  bsd*)     echo "BSD" ;;
-  msys*)    echo "WINDOWS" ;;
-  cygwin*)  echo "ALSO WINDOWS" ;;
-  *)        echo "unknown: $OSTYPE" ;;
+  solaris*) echo "Solaris OS is not supported" ;;
+  darwin*)  source <(curl -sL https://raw.githubusercontent.com/Jacke/-/main/scripts/install-mac.sh) ;;
+  linux*)   source <(curl -sL https://raw.githubusercontent.com/Jacke/-/main/scripts/install-linux.sh) ;;
+  bsd*)     echo "BSD OS is not supported" ;;
+  msys*)    echo "WINDOWS OS is not supported" ;;
+  cygwin*)  echo "WINDOWS OS is not supported" ;;
+  *)        echo "$OSTYPE OS is not supported" ;;
 esac
