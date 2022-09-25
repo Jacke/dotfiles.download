@@ -2,8 +2,8 @@
 
 case "$OSTYPE" in
   solaris*) echo "Solaris OS is not supported" ;;
-  darwin*)  source <(curl -sL https://raw.githubusercontent.com/Jacke/-/main/scripts/dotfiles/install-mac.sh) ;;
-  linux*)   source <(curl -sL https://raw.githubusercontent.com/Jacke/-/main/scripts/dotfiles/install-linux.sh) ;;
+  darwin*)  source <(curl -sL https://raw.githubusercontent.com/Jacke/-/main/scripts/dotfiles/executable_install-mac.sh) ;;
+  linux*)   source <(curl -sL https://raw.githubusercontent.com/Jacke/-/main/scripts/dotfiles/executable_install-linux.sh) ;;
   bsd*)     echo "BSD OS is not supported" ;;
   msys*)    echo "WINDOWS OS is not supported" ;;
   cygwin*)  echo "WINDOWS OS is not supported" ;;
