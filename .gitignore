@@ -164,3 +164,6 @@ CLAUDE.md
 # Wrangler
 .wrangler/
 
+# Build output
+_site/
+

@@ -37,7 +37,11 @@ export default {
 
     // curl на /install → вернуть скрипт
     if (isCurl && (url.pathname === "/install" || url.pathname === "/scripts/install")) {
-      const script = await fetch(`${RAW_GITHUB}/scripts/install`);
+      // Try new path first, fallback to old
+      let script = await fetch(`${RAW_GITHUB}/scripts/install`);
+      if (script.status === 404) {
+        script = await fetch(`${RAW_GITHUB}/install`);
+      }
       return new Response(script.body, {
         headers: { "content-type": "text/plain; charset=utf-8" }
       });
