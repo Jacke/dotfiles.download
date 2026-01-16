@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>~(iam) Dotfiles</title>
-  <meta name="description" content="Minimal. Fast. Opinionated. A shell environment for developers who value speed and simplicity.">
+  <meta name="description" content="A complete shell environment that installs in one command. Fast, modern, cross-platform.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="~(iam) Dotfiles">
-  <meta property="og:description" content="Minimal. Fast. Opinionated. A shell environment for developers who value speed and simplicity.">
+  <meta property="og:description" content="A complete shell environment that installs in one command. Fast, modern, cross-platform.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dotfiles.download">
   <meta property="og:image" content="https://dotfiles.download/assets/logo.png">
@@ -16,7 +16,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="~(iam) Dotfiles">
-  <meta name="twitter:description" content="Minimal. Fast. Opinionated. A shell environment for developers who value speed and simplicity.">
+  <meta name="twitter:description" content="A complete shell environment that installs in one command. Fast, modern, cross-platform.">
 
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>~</text></svg>">
@@ -25,8 +25,15 @@
   <div class="container">
     <header>
       <img src="/assets/logo.png" alt="~(iam) Dotfiles" class="logo">
-      <p class="tagline">Minimal. Fast. Opinionated.</p>
+      <p class="tagline">Your shell, but faster.</p>
     </header>
+
+    <section class="intro">
+      <p>
+        A complete shell environment that installs in one command.
+        No more spending hours configuring zsh, hunting for plugins, or wondering why your terminal is slow.
+      </p>
+    </section>
 
     <section class="install-section">
       <h2>Quick Install</h2>
@@ -41,27 +48,21 @@
       <p class="install-note">Works on macOS and Linux. One command. Full setup.</p>
     </section>
 
-    <section class="features">
-      <div class="feature">
-        <h3>⚡ Fast</h3>
-        <p>~150ms shell startup with lazy loading</p>
-      </div>
-      <div class="feature">
-        <h3>🔧 Modern Stack</h3>
-        <p>Chezmoi, Sheldon, Starship, ASDF</p>
-      </div>
-      <div class="feature">
-        <h3>🖥️ Cross-Platform</h3>
-        <p>macOS and Linux support</p>
-      </div>
-      <div class="feature">
-        <h3>📦 Batteries Included</h3>
-        <p>Git, fzf, ripgrep, eza, bat, zoxide</p>
-      </div>
+    <section class="about">
+      <h2>What is this?</h2>
+      <p>
+        Dotfiles are configuration files that live in your home directory. They control how your shell looks,
+        what aliases you have, how git behaves, and hundreds of other settings.
+      </p>
+      <p>
+        This project is a curated, tested, and optimized collection of dotfiles. Instead of copying random
+        configs from the internet, you get a coherent setup where everything works together.
+      </p>
     </section>
 
     <section class="performance">
       <h2>Shell Startup Performance</h2>
+      <p class="perf-intro">Most zsh setups are slow because they load everything at startup. We use lazy loading — tools initialize only when you first use them.</p>
       <div class="perf-comparison">
         <div class="perf-item">
           <span class="perf-label">Oh-My-Zsh</span>
@@ -84,21 +85,61 @@
       </div>
     </section>
 
-    <section class="stack">
+    <section class="includes">
       <h2>What's Included</h2>
-      <div class="stack-grid">
-        <div class="stack-item">Chezmoi</div>
-        <div class="stack-item">Sheldon</div>
-        <div class="stack-item">Starship</div>
-        <div class="stack-item">ASDF</div>
-        <div class="stack-item">Atuin</div>
-        <div class="stack-item">Zoxide</div>
-        <div class="stack-item">fzf</div>
-        <div class="stack-item">ripgrep</div>
-        <div class="stack-item">eza</div>
-        <div class="stack-item">bat</div>
-        <div class="stack-item">fd</div>
-        <div class="stack-item">delta</div>
+
+      <div class="include-category">
+        <h3>Configuration Management</h3>
+        <p>Your dotfiles sync across machines with <strong>Chezmoi</strong>. Change something on your laptop — it's on your server in seconds. Templates handle machine-specific differences automatically.</p>
+      </div>
+
+      <div class="include-category">
+        <h3>Fast Plugin System</h3>
+        <p><strong>Sheldon</strong> manages zsh plugins without the bloat. Written in Rust, it loads plugins in parallel and defers non-essential ones until after your prompt appears.</p>
+      </div>
+
+      <div class="include-category">
+        <h3>Smart Prompt</h3>
+        <p><strong>Starship</strong> shows git status, current directory, language versions — but only when relevant. No clutter, no lag, works in any terminal.</p>
+      </div>
+
+      <div class="include-category">
+        <h3>Version Management</h3>
+        <p>One tool for all runtimes. <strong>ASDF</strong> handles Node, Python, Ruby, Go, Rust — whatever you need. Per-project versions via <code>.tool-versions</code> files.</p>
+      </div>
+
+      <div class="include-category">
+        <h3>Better Defaults</h3>
+        <p>Modern replacements for ancient Unix tools: <strong>eza</strong> instead of ls (with colors and git status), <strong>bat</strong> instead of cat (with syntax highlighting), <strong>ripgrep</strong> instead of grep (10x faster), <strong>fd</strong> instead of find (actually usable).</p>
+      </div>
+
+      <div class="include-category">
+        <h3>Smart Navigation</h3>
+        <p><strong>Zoxide</strong> learns your habits. Type <code>z proj</code> and jump to <code>~/work/projects</code> because that's where you always go. <strong>fzf</strong> adds fuzzy search to everything — files, history, git branches.</p>
+      </div>
+
+      <div class="include-category">
+        <h3>Shell History</h3>
+        <p><strong>Atuin</strong> replaces basic history with a searchable database. Find that command you ran three weeks ago on your other machine. Sync history across devices.</p>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>⚡ Fast</h3>
+        <p>~150ms cold start. Lazy loading means you don't wait for tools you're not using.</p>
+      </div>
+      <div class="feature">
+        <h3>🖥️ Cross-Platform</h3>
+        <p>Same config on macOS and Linux. Chezmoi templates handle the differences.</p>
+      </div>
+      <div class="feature">
+        <h3>🔄 Synced</h3>
+        <p>One command to update everything — packages, plugins, configs.</p>
+      </div>
+      <div class="feature">
+        <h3>🛠️ Hackable</h3>
+        <p>Clean structure. Easy to understand, modify, and extend.</p>
       </div>
     </section>
 
