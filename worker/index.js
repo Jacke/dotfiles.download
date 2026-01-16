@@ -1,21 +1,45 @@
-// ASCII art banner для curl
+// ANSI color codes
+const c = {
+  reset: '\x1b[0m',
+  bold: '\x1b[1m',
+  dim: '\x1b[2m',
+  // Colors
+  cyan: '\x1b[36m',
+  brightCyan: '\x1b[96m',
+  blue: '\x1b[34m',
+  brightBlue: '\x1b[94m',
+  green: '\x1b[32m',
+  brightGreen: '\x1b[92m',
+  yellow: '\x1b[33m',
+  white: '\x1b[97m',
+  gray: '\x1b[90m',
+};
+
+// ASCII art banner для curl с цветами
 const BANNER = `
-  ~(iam) Dotfiles
-  ═══════════════════════════════════════
+${c.brightCyan}${c.bold}
+    ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
+    ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
+    ██║  ██║██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗
+    ██║  ██║██║   ██║   ██║   ██╔══╝  ██║██║     ██╔══╝  ╚════██║
+    ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
+    ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
+${c.reset}
+${c.gray}                        ~ ( i a m )  v1.0${c.reset}
 
-  Minimal. Fast. Opinionated.
-  Shell startup: ~150ms (vs ~800ms Oh-My-Zsh)
+${c.white}${c.bold}    Minimal. Fast. Opinionated.${c.reset}
+${c.gray}    Shell startup: ${c.brightGreen}~150ms${c.gray} (vs ~800ms Oh-My-Zsh)${c.reset}
 
-  INSTALL
-  ───────
-  source <(curl -sL dotfiles.download/install)
+${c.yellow}${c.bold}    INSTALL${c.reset}
+${c.gray}    ───────${c.reset}
+${c.brightGreen}    source <(curl -sL dotfiles.download/install)${c.reset}
 
-  STACK
-  ─────
-  Chezmoi · Sheldon · Starship · ASDF
-  fzf · ripgrep · eza · bat · zoxide
+${c.blue}${c.bold}    STACK${c.reset}
+${c.gray}    ─────${c.reset}
+${c.cyan}    Chezmoi · Sheldon · Starship · ASDF
+    fzf · ripgrep · eza · bat · zoxide${c.reset}
 
-  GitHub: https://github.com/Jacke/-
+${c.gray}    GitHub: ${c.brightBlue}https://github.com/Jacke/-${c.reset}
 
 `;
 
