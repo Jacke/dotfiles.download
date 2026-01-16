@@ -44,7 +44,7 @@ header {
 }
 
 .logo {
-  max-width: 280px;
+  max-width: 480px;
   width: 100%;
   margin-bottom: 1.5rem;
 }
@@ -315,7 +315,7 @@ footer a:hover {
   }
 
   .logo {
-    max-width: 200px;
+    max-width: 320px;
   }
 
   .tagline {
