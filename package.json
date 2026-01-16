@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "env NODE_ENV=production npx eleventy",
+    "dev": "npx eleventy --serve",
+    "build": "NODE_ENV=production npx eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

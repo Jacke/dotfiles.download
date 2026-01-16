@@ -1,0 +1,8 @@
+name = "dotfiles-download"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# После первого деплоя раскомментируй и добавь свой route:
+# routes = [
+#   { pattern = "dotfiles.download", zone_name = "dotfiles.download" }
+# ]

@@ -1,0 +1,8 @@
+{
+  "title": "~(iam) Dotfiles",
+  "description": "Minimal. Fast. Opinionated. A shell environment for developers who value speed and simplicity.",
+  "url": "https://dotfiles.download",
+  "github": "https://github.com/Jacke/-",
+  "version": "1.0.0",
+  "installCommand": "source <(curl -sL dotfiles.download/install)"
+}
