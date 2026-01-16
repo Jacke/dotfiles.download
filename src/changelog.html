@@ -1,0 +1,64 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changelog · {{ site.title }}</title>
+  <meta name="description" content="Release history and changelog for ~(iam) dotfiles">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/style.css?v={{ site.version }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>~</text></svg>">
+</head>
+<body>
+  <main>
+    <section class="hero hero-small">
+      <a href="/" class="back-link">← Back to home</a>
+      <h1>Changelog</h1>
+      <p class="subtitle">Release history for ~(iam) dotfiles</p>
+    </section>
+
+    <section class="changelog-full">
+      {% for entry in changelog %}
+      <article class="changelog-entry">
+        <header>
+          <h2>v{{ entry.version }}</h2>
+          {% if entry.date %}
+          <time>{{ entry.date }}</time>
+          {% endif %}
+        </header>
+        {% if entry.changes.length %}
+        <ul>
+          {% for change in entry.changes %}
+          <li>{{ change }}</li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="no-changes">No detailed changes recorded.</p>
+        {% endif %}
+      </article>
+      {% endfor %}
+
+      {% if not changelog or changelog.length == 0 %}
+      <p class="no-changelog">No changelog available yet. Check the <a href="{{ site.github }}">GitHub repository</a> for commit history.</p>
+      {% endif %}
+    </section>
+
+    <section class="cta">
+      <a href="{{ site.github }}/blob/main/CHANGELOG.md" class="btn btn-secondary">
+        View full changelog on GitHub →
+      </a>
+    </section>
+
+    <footer>
+      <p>v{{ site.version }} · <a href="{{ site.github }}">GitHub</a> · <a href="/">Home</a> · MIT</p>
+    </footer>
+  </main>
+</body>
+</html>

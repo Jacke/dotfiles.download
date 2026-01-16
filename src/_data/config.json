@@ -1,0 +1,34 @@
+{
+  "site": {
+    "title": "~(iam) Dotfiles",
+    "tagline": "Your shell, but faster.",
+    "description": "A complete shell environment that installs in one command. Fast, modern, cross-platform.",
+    "url": "https://dotfiles.download",
+    "github": "https://github.com/Jacke/iam",
+    "installCommand": "source <(curl -sL dotfiles.download/install)"
+  },
+  "performance": [
+    { "name": "Oh-My-Zsh", "time": "~800ms", "percent": 100, "color": "slow" },
+    { "name": "Prezto", "time": "~500ms", "percent": 62, "color": "medium" },
+    { "name": "~(iam) dotfiles", "time": "~150ms", "percent": 19, "color": "fast" }
+  ],
+  "stack": {
+    "featured": [
+      { "name": "Chezmoi", "desc": "Sync dotfiles across machines" },
+      { "name": "Starship", "desc": "Smart, minimal prompt" },
+      { "name": "fzf", "desc": "Fuzzy finder for everything" },
+      { "name": "zoxide", "desc": "Smart cd that learns your habits" }
+    ],
+    "other": ["Sheldon", "ASDF", "eza", "bat", "ripgrep", "fd"]
+  },
+  "features": [
+    { "title": "Fast", "desc": "~150ms cold start. Lazy loading means instant prompts." },
+    { "title": "Cross-platform", "desc": "Same config on macOS and Linux. Templates handle the rest." },
+    { "title": "One command updates", "desc": "Packages, plugins, configs — all synced with one command." },
+    { "title": "Hackable", "desc": "Clean structure. Easy to understand and extend." }
+  ],
+  "curl": {
+    "gradient": ["51", "50", "44", "38", "32", "26"],
+    "boxWidth": 68
+  }
+}

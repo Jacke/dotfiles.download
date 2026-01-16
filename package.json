@@ -1,24 +1,21 @@
 {
   "name": "dotfiles.download",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Landing page for ~(iam) dotfiles",
   "scripts": {
     "dev": "npx eleventy --serve",
+    "prebuild": "node scripts/build.js",
     "build": "NODE_ENV=production npx eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy:worker": "cd worker && npx wrangler deploy",
+    "deploy": "npm run build && npm run deploy:worker"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jacke/dotfiles.download.git"
   },
-  "keywords": [],
+  "keywords": ["dotfiles", "zsh", "shell"],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Jacke/dotfiles.download/issues"
-  },
-  "homepage": "https://github.com/Jacke/dotfiles.download#readme",
+  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.1"
   }

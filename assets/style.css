@@ -327,6 +327,159 @@ footer a:hover {
   color: var(--white);
 }
 
+/* Muted text
+   ========================================================================== */
+.muted {
+  color: var(--gray-500);
+}
+
+/* Changelog Preview (on home)
+   ========================================================================== */
+.changes-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.changes-list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9375rem;
+  color: var(--gray-400);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.changes-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+.more-changes {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-top: 12px;
+}
+
+.changelog-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: var(--blue);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.changelog-link:hover {
+  color: var(--white);
+}
+
+/* Changelog Page
+   ========================================================================== */
+.hero-small {
+  padding: 40px 0 24px;
+}
+
+.hero-small h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--white);
+}
+
+.changelog-full {
+  padding: 24px 0;
+}
+
+.changelog-entry {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--gray-800);
+}
+
+.changelog-entry:first-child {
+  padding-top: 0;
+}
+
+.changelog-entry:last-child {
+  border-bottom: none;
+}
+
+.changelog-entry header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.changelog-entry h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0;
+}
+
+.changelog-entry time {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.changelog-entry ul {
+  list-style: none;
+}
+
+.changelog-entry li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9375rem;
+  color: var(--gray-400);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.changelog-entry li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--green);
+}
+
+.no-changes,
+.no-changelog {
+  font-size: 0.9375rem;
+  color: var(--gray-500);
+}
+
+.no-changelog a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gray-300);
+  border: 1px solid var(--gray-700);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-900);
+  border-color: var(--gray-600);
+  opacity: 1;
+}
+
 /* Responsive
    ========================================================================== */
 @media (max-width: 640px) {

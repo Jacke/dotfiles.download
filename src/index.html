@@ -16,14 +16,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/style.css?v=3">
+  <link rel="stylesheet" href="/assets/style.css?v={{ site.version }}">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>~</text></svg>">
 </head>
 <body>
   <main>
     <!-- Hero -->
     <section class="hero">
-      <img src="/assets/logo.png" alt="~(iam) Dotfiles" class="logo">
+      <img src="/assets/logo.png" alt="{{ site.title }}" class="logo">
       <p class="tagline">Your shell, but faster.</p>
       <p class="subtitle">A complete shell environment that installs in one command.<br>Stop wasting time configuring zsh from scratch.</p>
     </section>
@@ -41,7 +41,7 @@
             </svg>
           </button>
         </div>
-        <span class="install-note">macOS & Linux</span>
+        <span class="install-note">macOS & Linux · v{{ site.version }}</span>
       </div>
     </section>
 
@@ -59,27 +59,15 @@
       <p>Most zsh setups load everything at startup. We use lazy loading — tools initialize only when you use them.</p>
 
       <div class="perf-chart">
+        {% for item in config.performance %}
         <div class="perf-row">
-          <span class="perf-name">Oh-My-Zsh</span>
+          <span class="perf-name">{{ item.name }}</span>
           <div class="perf-track">
-            <div class="perf-bar perf-slow" style="width: 100%"></div>
+            <div class="perf-bar perf-{{ item.color }}" style="width: {{ item.percent }}%"></div>
           </div>
-          <span class="perf-time">~800ms</span>
+          <span class="perf-time">{{ item.time }}</span>
         </div>
-        <div class="perf-row">
-          <span class="perf-name">Prezto</span>
-          <div class="perf-track">
-            <div class="perf-bar perf-medium" style="width: 62%"></div>
-          </div>
-          <span class="perf-time">~500ms</span>
-        </div>
-        <div class="perf-row">
-          <span class="perf-name">~(iam) dotfiles</span>
-          <div class="perf-track">
-            <div class="perf-bar perf-fast" style="width: 19%"></div>
-          </div>
-          <span class="perf-time">~150ms</span>
-        </div>
+        {% endfor %}
       </div>
     </section>
 
@@ -89,8 +77,12 @@
       <h2>Everything you need</h2>
 
       <div class="stack-compact">
-        <p><strong>Chezmoi</strong> syncs dotfiles across machines. <strong>Sheldon</strong> loads zsh plugins fast. <strong>Starship</strong> for a smart prompt. <strong>ASDF</strong> manages Node, Python, Ruby versions.</p>
-        <p><strong>eza</strong>, <strong>bat</strong>, <strong>ripgrep</strong>, <strong>fd</strong> — modern replacements for ls, cat, grep, find. <strong>Zoxide</strong> + <strong>fzf</strong> for fast navigation.</p>
+        <p>
+          {% for item in config.stack.featured %}
+          <strong>{{ item.name }}</strong> — {{ item.desc }}{% if not loop.last %}. {% endif %}
+          {% endfor %}
+        </p>
+        <p class="muted">Plus {{ config.stack.other | join(", ") }}.</p>
       </div>
     </section>
 
@@ -100,24 +92,36 @@
       <h2>Built different</h2>
 
       <div class="features">
+        {% for feature in config.features %}
         <div class="feature">
-          <h3>Fast</h3>
-          <p>~150ms cold start. Lazy loading means instant prompts.</p>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.desc }}</p>
         </div>
-        <div class="feature">
-          <h3>Cross-platform</h3>
-          <p>Same config on macOS and Linux. Templates handle the rest.</p>
-        </div>
-        <div class="feature">
-          <h3>One command updates</h3>
-          <p>Packages, plugins, configs — all synced with one command.</p>
-        </div>
-        <div class="feature">
-          <h3>Hackable</h3>
-          <p>Clean structure. Easy to understand and extend.</p>
-        </div>
+        {% endfor %}
       </div>
     </section>
+
+    <!-- Latest Changes -->
+    {% if site.changelog and site.changelog.length %}
+    <section class="content-section changelog-preview">
+      <span class="label">Latest Changes</span>
+      <h2>What's new in v{{ site.version }}</h2>
+
+      {% set latest = site.changelog[0] %}
+      {% if latest %}
+      <ul class="changes-list">
+        {% for change in latest.changes | slice(0, 4) %}
+        <li>{{ change }}</li>
+        {% endfor %}
+      </ul>
+      {% if latest.changes.length > 4 %}
+      <p class="more-changes">and {{ latest.changes.length - 4 }} more changes...</p>
+      {% endif %}
+      {% endif %}
+
+      <a href="/changelog/" class="changelog-link">View full changelog →</a>
+    </section>
+    {% endif %}
 
     <!-- CTA -->
     <section class="cta">
@@ -130,7 +134,7 @@
     </section>
 
     <footer>
-      <p>v{{ site.version }} · <a href="{{ site.github }}">GitHub</a> · MIT</p>
+      <p>v{{ site.version }} · <a href="{{ site.github }}">GitHub</a> · <a href="/changelog/">Changelog</a> · MIT</p>
     </footer>
   </main>
 

@@ -1,0 +1,32 @@
+[
+  {
+    "version": "1.1.0",
+    "date": "2025-01-16",
+    "changes": [
+      "**CLI Tools Showcase** — new `dotfiles tools` command to explore installed CLI tools with descriptions and install status",
+      "**Self-update system** — dotfiles now check for updates and show changelog",
+      "**Plugin manager** — toggle zsh plugins on/off via `dotfiles plugins`",
+      "**bbrew integration** — Homebrew TUI on macOS via `dotfiles packages`",
+      "CI workflow: removed CodeQL (not applicable for shell scripts)",
+      "CI workflow: fixed Docker build with `load: true`",
+      "Removed duplicate git aliases (gco, gcb, gcm, gprm, grbm)",
+      "Version bump to 1.1.0",
+      "Maintenance menu now shows update badge when new version available"
+    ]
+  },
+  {
+    "version": "1.0.0",
+    "date": "2025-01-15",
+    "changes": [
+      "**Serotonin TUI** — interactive configuration app with seasonal themes",
+      "**Seasonal animations** — snowflakes, petals, sunshine, leaves",
+      "**Interactive alias browser** — browse and search shell aliases",
+      "**Shell profiler** — measure startup time with `dotfiles profile`",
+      "**Doctor command** — diagnose environment with `dotfiles doctor`",
+      "Chezmoi-based dotfiles management",
+      "Sheldon plugin manager with zsh-defer",
+      "Starship prompt configuration",
+      "Cross-platform support (macOS + Linux)"
+    ]
+  }
+]
