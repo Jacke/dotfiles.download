@@ -1,360 +1,331 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&family=JetBrains+Mono:wght@400&display=swap');
+/* ============================================================================
+   ~(iam) Dotfiles — Clean Layout
+   ============================================================================ */
 
-:root {
-  --bg: #09090b;
-  --bg-card: #18181b;
-  --text: #fafafa;
-  --text-dim: #d4d4d8;
-  --text-muted: #71717a;
-  --accent: #60a5fa;
-  --green: #4ade80;
-  --yellow: #facc15;
-  --red: #f87171;
-  --border: #27272a;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-  /* Typography */
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'Source Serif 4', Georgia, serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
-
-* {
+/* Reset & Base
+   ========================================================================== */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --black: #0a0a0a;
+  --gray-900: #171717;
+  --gray-800: #262626;
+  --gray-700: #404040;
+  --gray-500: #737373;
+  --gray-400: #a3a3a3;
+  --gray-300: #d4d4d4;
+  --white: #fafafa;
+
+  --green: #22c55e;
+  --yellow: #eab308;
+  --red: #ef4444;
+  --blue: #3b82f6;
+}
+
 html {
-  font-size: 18px;
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--text-dim);
-  line-height: 1.7;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--black);
+  color: var(--gray-300);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
-.container {
-  max-width: 640px;
+main {
+  max-width: 680px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 24px;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   HEADER
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-header {
-  padding: 5rem 0 1rem;
+/* Hero
+   ========================================================================== */
+.hero {
+  padding: 80px 0 48px;
   text-align: center;
 }
 
 .logo {
-  max-width: 380px;
   width: 100%;
-  margin-bottom: 1.5rem;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 24px;
 }
 
 .tagline {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 500;
-  color: var(--text);
-  letter-spacing: -0.03em;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   INTRO
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.intro {
-  text-align: center;
-  padding: 1.5rem 0 3rem;
-}
-
-.intro p {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   INSTALL
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.install-section {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 4rem;
-}
-
-.install-section h2 {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 2rem;
   font-weight: 600;
-  color: var(--accent);
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--gray-400);
+  line-height: 1.7;
+}
+
+/* Install Box
+   ========================================================================== */
+.install {
+  padding: 0 0 64px;
+}
+
+.install-box {
+  background: var(--gray-900);
+  border: 1px solid var(--gray-800);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.install-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-  text-align: center;
+  color: var(--blue);
+  margin-bottom: 16px;
 }
 
-.install-command {
-  background: var(--bg);
-  border: 1px solid var(--border);
+.install-cmd {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--black);
+  border: 1px solid var(--gray-800);
   border-radius: 8px;
-  padding: 1rem 3.5rem 1rem 1.25rem;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: var(--green);
-  position: relative;
+  padding: 14px 16px;
   cursor: pointer;
-  transition: border-color 0.2s;
+  transition: border-color 0.15s;
 }
 
-.install-command:hover {
+.install-cmd:hover {
   border-color: var(--green);
 }
 
-.install-command code {
-  display: block;
-  overflow-x: auto;
+.install-cmd code {
+  font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+  font-size: 0.875rem;
+  color: var(--green);
   white-space: nowrap;
+  overflow-x: auto;
 }
 
 .copy-btn {
-  position: absolute;
-  right: 0.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
+  flex-shrink: 0;
+  background: none;
   border: none;
-  color: var(--text-muted);
+  color: var(--gray-500);
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 6px;
-  transition: color 0.2s;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s;
 }
 
 .copy-btn:hover {
-  color: var(--text);
-}
-
-.copy-btn svg {
-  width: 18px;
-  height: 18px;
-  display: block;
+  color: var(--white);
 }
 
 .install-note {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  text-align: center;
-  margin-top: 1rem;
-  letter-spacing: 0.02em;
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  margin-top: 12px;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   SECTIONS
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-section {
-  padding: 3rem 0;
-}
-
-section + section {
-  border-top: 1px solid var(--border);
+/* Content Sections
+   ========================================================================== */
+.content-section {
+  padding: 64px 0;
+  border-top: 1px solid var(--gray-800);
 }
 
 .label {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
+  display: block;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+  color: var(--gray-500);
+  margin-bottom: 12px;
 }
 
-h2 {
-  font-family: var(--font-display);
-  font-size: 2rem;
+.content-section h2 {
+  font-size: 1.75rem;
   font-weight: 600;
-  color: var(--text);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
 }
 
-section > p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
+.content-section > p {
+  font-size: 1.0625rem;
+  color: var(--gray-300);
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
 
-section > p:last-of-type {
+.content-section > p:last-of-type {
   margin-bottom: 0;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   PERFORMANCE
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.perf-intro {
-  margin-bottom: 2rem;
+.lead {
+  font-size: 1.125rem;
+  color: var(--gray-300);
 }
 
-.perf-comparison {
+/* Performance Chart
+   ========================================================================== */
+.perf-chart {
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
-.perf-item {
-  display: flex;
+.perf-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 70px;
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
 }
 
-.perf-label {
-  font-family: var(--font-display);
-  width: 90px;
-  font-size: 0.8rem;
+.perf-name {
+  font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-muted);
-  flex-shrink: 0;
+  color: var(--gray-400);
 }
 
-.perf-bar-container {
-  flex: 1;
-  height: 28px;
-  background: var(--bg-card);
-  border-radius: 4px;
+.perf-track {
+  height: 32px;
+  background: var(--gray-900);
+  border-radius: 6px;
   overflow: hidden;
 }
 
 .perf-bar {
   height: 100%;
+  border-radius: 6px;
+}
+
+.perf-slow { background: #7f1d1d; }
+.perf-medium { background: #713f12; }
+.perf-fast { background: #14532d; }
+
+.perf-time {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  color: var(--gray-400);
+  text-align: right;
+}
+
+/* Stack List (What's included)
+   ========================================================================== */
+.stack-list {
+  margin-top: 32px;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text);
+  flex-direction: column;
+  gap: 0;
 }
 
-.perf-bar.slow { background: #7f1d1d; }
-.perf-bar.medium { background: #713f12; }
-.perf-bar.fast { background: #14532d; }
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   INCLUDES
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.includes-list {
-  margin-top: 2rem;
+.stack-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--gray-800);
 }
 
-.include-item {
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.include-item:first-child {
+.stack-item:first-child {
   padding-top: 0;
 }
 
-.include-item:last-child {
+.stack-item:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
 
-.include-item h3 {
-  font-family: var(--font-display);
+.stack-item h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.35rem;
+  color: var(--white);
+  margin-bottom: 8px;
 }
 
-.include-item p {
-  font-size: 0.95rem;
-  color: var(--text-dim);
+.stack-item p {
+  font-size: 0.9375rem;
+  color: var(--gray-400);
   line-height: 1.65;
-  margin: 0;
 }
 
-.include-item strong {
-  color: var(--text);
+.stack-item strong {
+  color: var(--gray-300);
   font-weight: 500;
 }
 
-.include-item code {
-  font-family: var(--font-mono);
-  background: var(--bg-card);
-  padding: 0.1rem 0.35rem;
-  border-radius: 3px;
-  font-size: 0.8rem;
+.stack-item code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  background: var(--gray-900);
+  padding: 2px 6px;
+  border-radius: 4px;
   color: var(--green);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   FEATURES
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.features-grid {
+/* Features Grid
+   ========================================================================== */
+.features {
+  margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem 2rem;
-  margin-top: 1.5rem;
+  gap: 32px 48px;
 }
 
 .feature h3 {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--text);
-  margin-bottom: 0.25rem;
+  color: var(--white);
+  margin-bottom: 6px;
 }
 
 .feature p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+  font-size: 0.875rem;
+  color: var(--gray-500);
   line-height: 1.55;
-  margin: 0;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   CTA
-   ═══════════════════════════════════════════════════════════════════════════ */
-
+/* CTA
+   ========================================================================== */
 .cta {
+  padding: 64px 0;
   text-align: center;
-  padding: 4rem 0 !important;
-  border: none !important;
+  border-top: 1px solid var(--gray-800);
 }
 
 .btn {
-  font-family: var(--font-display);
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: var(--text);
-  color: var(--bg);
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
+  gap: 10px;
+  background: var(--white);
+  color: var(--black);
+  font-size: 0.9375rem;
   font-weight: 600;
-  font-size: 0.9rem;
-  transition: opacity 0.2s;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.15s;
 }
 
 .btn:hover {
@@ -362,71 +333,86 @@ section > p:last-of-type {
 }
 
 .btn svg {
-  width: 18px;
-  height: 18px;
+  flex-shrink: 0;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════════════════════════════════════ */
-
+/* Footer
+   ========================================================================== */
 footer {
+  padding: 32px 0 48px;
   text-align: center;
-  padding: 2rem 0 3rem;
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.8125rem;
+  color: var(--gray-500);
 }
 
 footer a {
-  color: var(--text-dim);
+  color: var(--gray-400);
   text-decoration: none;
+  transition: color 0.15s;
 }
 
 footer a:hover {
-  color: var(--text);
+  color: var(--white);
 }
 
-/* ═══════════════════════════════════════════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-@media (max-width: 600px) {
-  html {
-    font-size: 16px;
+/* Responsive
+   ========================================================================== */
+@media (max-width: 640px) {
+  main {
+    padding: 0 20px;
   }
 
-  header {
-    padding: 3rem 0 1rem;
+  .hero {
+    padding: 48px 0 32px;
   }
 
   .logo {
-    max-width: 260px;
+    max-width: 280px;
   }
 
   .tagline {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
-  h2 {
-    font-size: 1.6rem;
+  .subtitle {
+    font-size: 1rem;
   }
 
-  .install-section {
-    padding: 1.5rem;
+  .install {
+    padding-bottom: 48px;
   }
 
-  .install-command {
+  .install-cmd code {
     font-size: 0.75rem;
   }
 
-  .perf-label {
-    width: 70px;
-    font-size: 0.7rem;
+  .content-section {
+    padding: 48px 0;
   }
 
-  .features-grid {
+  .content-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .perf-row {
+    grid-template-columns: 80px 1fr 60px;
+    gap: 12px;
+  }
+
+  .perf-name {
+    font-size: 0.75rem;
+  }
+
+  .perf-time {
+    font-size: 0.75rem;
+  }
+
+  .features {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 24px;
+  }
+
+  .cta {
+    padding: 48px 0;
   }
 }

@@ -12,150 +12,163 @@
   <meta property="og:url" content="https://dotfiles.download">
   <meta property="og:image" content="https://dotfiles.download/assets/logo.png">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="~(iam) Dotfiles">
-  <meta name="twitter:description" content="A complete shell environment that installs in one command. Fast, modern, cross-platform.">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>~</text></svg>">
 </head>
 <body>
-  <div class="container">
-    <header>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
       <img src="/assets/logo.png" alt="~(iam) Dotfiles" class="logo">
       <p class="tagline">Your shell, but faster.</p>
-    </header>
-
-    <section class="intro">
-      <p>A complete shell environment that installs in one command. Stop wasting time configuring zsh from scratch.</p>
+      <p class="subtitle">A complete shell environment that installs in one command.<br>Stop wasting time configuring zsh from scratch.</p>
     </section>
 
-    <section class="install-section">
-      <h2>Quick Install</h2>
-      <div class="install-command" onclick="copyCommand()" id="installCmd">
-        <code>source &lt;(curl -sL dotfiles.download/install)</code>
-        <button class="copy-btn" title="Copy to clipboard">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
-          </svg>
-        </button>
-      </div>
-      <p class="install-note">macOS and Linux. One command. Full setup.</p>
-    </section>
-
-    <section class="about">
-      <p class="section-title">What is this</p>
-      <p>Dotfiles are configuration files that control your shell, git, editor, and dozens of other tools. This project is a tested, optimized collection — not random configs from the internet, but a coherent setup where everything works together.</p>
-    </section>
-
-    <section class="performance">
-      <p class="section-title">Performance</p>
-      <h2 class="section-heading">5x faster shell startup</h2>
-      <p class="perf-intro">Most zsh setups load everything at startup. We use lazy loading — tools initialize only when you use them.</p>
-      <div class="perf-comparison">
-        <div class="perf-item">
-          <span class="perf-label">Oh-My-Zsh</span>
-          <div class="perf-bar-container">
-            <div class="perf-bar slow" style="width: 100%;">~800ms</div>
-          </div>
+    <!-- Install -->
+    <section class="install">
+      <div class="install-box">
+        <span class="install-label">Quick Install</span>
+        <div class="install-cmd" onclick="copyCommand()">
+          <code>source &lt;(curl -sL dotfiles.download/install)</code>
+          <button class="copy-btn" title="Copy">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
         </div>
-        <div class="perf-item">
-          <span class="perf-label">Prezto</span>
-          <div class="perf-bar-container">
-            <div class="perf-bar medium" style="width: 62%;">~500ms</div>
-          </div>
-        </div>
-        <div class="perf-item">
-          <span class="perf-label">~(iam)</span>
-          <div class="perf-bar-container">
-            <div class="perf-bar fast" style="width: 19%;">~150ms</div>
-          </div>
-        </div>
+        <span class="install-note">macOS & Linux</span>
       </div>
     </section>
 
-    <section class="includes">
-      <p class="section-title">What's included</p>
-      <h2 class="section-heading">Everything you need</h2>
-      <div class="includes-grid">
-        <div class="include-item">
-          <h3><span class="icon">📦</span> Sync across machines</h3>
+    <!-- What is this -->
+    <section class="content-section">
+      <span class="label">What is this</span>
+      <p class="lead">Dotfiles are configuration files that control your shell, git, editor, and dozens of other tools.</p>
+      <p>This project is a tested, optimized collection — not random configs from the internet, but a coherent setup where everything works together.</p>
+    </section>
+
+    <!-- Performance -->
+    <section class="content-section">
+      <span class="label">Performance</span>
+      <h2>5x faster shell startup</h2>
+      <p>Most zsh setups load everything at startup. We use lazy loading — tools initialize only when you use them.</p>
+
+      <div class="perf-chart">
+        <div class="perf-row">
+          <span class="perf-name">Oh-My-Zsh</span>
+          <div class="perf-track">
+            <div class="perf-bar perf-slow" style="width: 100%"></div>
+          </div>
+          <span class="perf-time">~800ms</span>
+        </div>
+        <div class="perf-row">
+          <span class="perf-name">Prezto</span>
+          <div class="perf-track">
+            <div class="perf-bar perf-medium" style="width: 62%"></div>
+          </div>
+          <span class="perf-time">~500ms</span>
+        </div>
+        <div class="perf-row">
+          <span class="perf-name">~(iam)</span>
+          <div class="perf-track">
+            <div class="perf-bar perf-fast" style="width: 19%"></div>
+          </div>
+          <span class="perf-time">~150ms</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's included -->
+    <section class="content-section">
+      <span class="label">What's included</span>
+      <h2>Everything you need</h2>
+
+      <div class="stack-list">
+        <div class="stack-item">
+          <h3>Sync across machines</h3>
           <p><strong>Chezmoi</strong> keeps your dotfiles in sync. Change something on your laptop — it's on your server in seconds. Templates handle machine-specific differences.</p>
         </div>
-        <div class="include-item">
-          <h3><span class="icon">⚡</span> Fast plugin loading</h3>
+
+        <div class="stack-item">
+          <h3>Fast plugin loading</h3>
           <p><strong>Sheldon</strong> manages zsh plugins without bloat. Written in Rust, it loads plugins in parallel and defers non-essential ones until after your prompt appears.</p>
         </div>
-        <div class="include-item">
-          <h3><span class="icon">✨</span> Smart prompt</h3>
+
+        <div class="stack-item">
+          <h3>Smart prompt</h3>
           <p><strong>Starship</strong> shows git status, directory, language versions — but only when relevant. No clutter, no lag, works everywhere.</p>
         </div>
-        <div class="include-item">
-          <h3><span class="icon">🔧</span> Version management</h3>
+
+        <div class="stack-item">
+          <h3>Version management</h3>
           <p>One tool for all runtimes. <strong>ASDF</strong> handles Node, Python, Ruby, Go, Rust — per-project versions via <code>.tool-versions</code>.</p>
         </div>
-        <div class="include-item">
-          <h3><span class="icon">🚀</span> Modern CLI tools</h3>
+
+        <div class="stack-item">
+          <h3>Modern CLI tools</h3>
           <p><strong>eza</strong> replaces ls, <strong>bat</strong> replaces cat, <strong>ripgrep</strong> replaces grep, <strong>fd</strong> replaces find. Faster, prettier, actually usable.</p>
         </div>
-        <div class="include-item">
-          <h3><span class="icon">🧭</span> Smart navigation</h3>
+
+        <div class="stack-item">
+          <h3>Smart navigation</h3>
           <p><strong>Zoxide</strong> learns your habits — type <code>z proj</code> to jump to <code>~/work/projects</code>. <strong>fzf</strong> adds fuzzy search to files, history, branches.</p>
         </div>
       </div>
     </section>
 
-    <section class="features">
-      <p class="section-title">Why this</p>
-      <h2 class="section-heading">Built different</h2>
-      <div class="features-grid">
+    <!-- Why this -->
+    <section class="content-section">
+      <span class="label">Why this</span>
+      <h2>Built different</h2>
+
+      <div class="features">
         <div class="feature">
-          <h3>⚡ Fast</h3>
+          <h3>Fast</h3>
           <p>~150ms cold start. Lazy loading means instant prompts.</p>
         </div>
         <div class="feature">
-          <h3>🖥️ Cross-platform</h3>
+          <h3>Cross-platform</h3>
           <p>Same config on macOS and Linux. Templates handle the rest.</p>
         </div>
         <div class="feature">
-          <h3>🔄 One command updates</h3>
+          <h3>One command updates</h3>
           <p>Packages, plugins, configs — all synced with one command.</p>
         </div>
         <div class="feature">
-          <h3>🛠️ Hackable</h3>
+          <h3>Hackable</h3>
           <p>Clean structure. Easy to understand and extend.</p>
         </div>
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta">
       <a href="https://github.com/Jacke/-" class="btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
         </svg>
         View on GitHub
       </a>
     </section>
-  </div>
 
-  <footer>
-    <p>v1.0.0 · <a href="https://github.com/Jacke/-">GitHub</a> · MIT</p>
-  </footer>
+    <footer>
+      <p>v1.0.0 · <a href="https://github.com/Jacke/-">GitHub</a> · MIT</p>
+    </footer>
+  </main>
 
   <script>
     function copyCommand() {
-      const cmd = 'source <(curl -sL dotfiles.download/install)';
+      const cmd = 'source &lt;(curl -sL dotfiles.download/install)';
       navigator.clipboard.writeText(cmd).then(() => {
         const btn = document.querySelector('.copy-btn');
-        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>';
-        btn.style.color = '#22c55e';
+        btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
         setTimeout(() => {
-          btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>';
-          btn.style.color = '';
+          btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
         }, 2000);
       });
     }
