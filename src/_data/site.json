@@ -1,6 +1,6 @@
 {
   "title": "~(iam) Dotfiles",
-  "description": "Minimal. Fast. Opinionated. A shell environment for developers who value speed and simplicity.",
+  "description": "A complete shell environment that installs in one command. Fast, modern, cross-platform.",
   "url": "https://dotfiles.download",
   "github": "https://github.com/Jacke/-",
   "version": "1.0.0",

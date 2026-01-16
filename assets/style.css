@@ -223,37 +223,94 @@ header {
   background: linear-gradient(90deg, #3fb950 0%, #238636 100%);
 }
 
-/* Stack */
-.stack {
+/* Intro */
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* About */
+.about {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.about h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
+}
+
+/* Performance intro */
+.perf-intro {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Includes */
+.includes {
   margin: 3rem 0;
 }
 
-.stack h2 {
+.includes h2 {
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.stack-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.75rem;
-}
-
-.stack-item {
+.include-category {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  text-align: center;
-  transition: border-color 0.2s, color 0.2s;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.stack-item:hover {
-  border-color: var(--accent);
+.include-category h3 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.include-category p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.include-category strong {
   color: var(--text);
+}
+
+.include-category code {
+  background: var(--code-bg);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--green);
 }
 
 /* CTA */
