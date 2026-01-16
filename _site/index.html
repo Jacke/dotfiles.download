@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>~(iam) Dotfiles</title>
+  <meta name="description" content="Minimal. Fast. Opinionated. A shell environment for developers who value speed and simplicity.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="~(iam) Dotfiles">
+  <meta property="og:description" content="Minimal. Fast. Opinionated. A shell environment for developers who value speed and simplicity.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dotfiles.download">
+  <meta property="og:image" content="https://dotfiles.download/assets/logo.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="~(iam) Dotfiles">
+  <meta name="twitter:description" content="Minimal. Fast. Opinionated. A shell environment for developers who value speed and simplicity.">
+
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>~</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="/assets/logo.png" alt="~(iam) Dotfiles" class="logo">
+      <p class="tagline">Minimal. Fast. Opinionated.</p>
+    </header>
+
+    <section class="install-section">
+      <h2>Quick Install</h2>
+      <div class="install-command" onclick="copyCommand()" id="installCmd">
+        <code>source &lt;(curl -sL dotfiles.download/install)</code>
+        <button class="copy-btn" title="Copy to clipboard">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+        </button>
+      </div>
+      <p class="install-note">Works on macOS and Linux. One command. Full setup.</p>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>⚡ Fast</h3>
+        <p>~150ms shell startup with lazy loading</p>
+      </div>
+      <div class="feature">
+        <h3>🔧 Modern Stack</h3>
+        <p>Chezmoi, Sheldon, Starship, ASDF</p>
+      </div>
+      <div class="feature">
+        <h3>🖥️ Cross-Platform</h3>
+        <p>macOS and Linux support</p>
+      </div>
+      <div class="feature">
+        <h3>📦 Batteries Included</h3>
+        <p>Git, fzf, ripgrep, eza, bat, zoxide</p>
+      </div>
+    </section>
+
+    <section class="performance">
+      <h2>Shell Startup Performance</h2>
+      <div class="perf-comparison">
+        <div class="perf-item">
+          <span class="perf-label">Oh-My-Zsh</span>
+          <div class="perf-bar-container">
+            <div class="perf-bar slow" style="width: 100%;">~800ms</div>
+          </div>
+        </div>
+        <div class="perf-item">
+          <span class="perf-label">Prezto</span>
+          <div class="perf-bar-container">
+            <div class="perf-bar medium" style="width: 62%;">~500ms</div>
+          </div>
+        </div>
+        <div class="perf-item">
+          <span class="perf-label">~(iam)</span>
+          <div class="perf-bar-container">
+            <div class="perf-bar fast" style="width: 19%;">~150ms</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack">
+      <h2>What's Included</h2>
+      <div class="stack-grid">
+        <div class="stack-item">Chezmoi</div>
+        <div class="stack-item">Sheldon</div>
+        <div class="stack-item">Starship</div>
+        <div class="stack-item">ASDF</div>
+        <div class="stack-item">Atuin</div>
+        <div class="stack-item">Zoxide</div>
+        <div class="stack-item">fzf</div>
+        <div class="stack-item">ripgrep</div>
+        <div class="stack-item">eza</div>
+        <div class="stack-item">bat</div>
+        <div class="stack-item">fd</div>
+        <div class="stack-item">delta</div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <a href="https://github.com/Jacke/-" class="btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+        View on GitHub
+      </a>
+    </section>
+  </div>
+
+  <footer>
+    <p>
+      v1.0.0 ·
+      <a href="https://github.com/Jacke/-">GitHub</a> ·
+      MIT License
+    </p>
+  </footer>
+
+  <script>
+    function copyCommand() {
+      const cmd = 'source <(curl -sL dotfiles.download/install)';
+      navigator.clipboard.writeText(cmd).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>';
+        btn.style.color = '#3fb950';
+        setTimeout(() => {
+          btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>';
+          btn.style.color = '';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

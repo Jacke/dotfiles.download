@@ -19,8 +19,8 @@ const BANNER = `
 
 `;
 
-// GitHub Pages origin
-const ORIGIN = "https://jacke.github.io/dotfiles.download";
+// GitHub raw content (bypasses CNAME redirect)
+const RAW_GITHUB = "https://raw.githubusercontent.com/Jacke/dotfiles.download/gh-pages";
 
 export default {
   async fetch(request) {
@@ -36,20 +36,38 @@ export default {
     }
 
     // curl на /install → вернуть скрипт
-    if (url.pathname === "/install" || url.pathname === "/scripts/install") {
-      const script = await fetch(`${ORIGIN}/scripts/install`);
+    if (isCurl && (url.pathname === "/install" || url.pathname === "/scripts/install")) {
+      const script = await fetch(`${RAW_GITHUB}/scripts/install`);
       return new Response(script.body, {
         headers: { "content-type": "text/plain; charset=utf-8" }
       });
     }
 
-    // Всё остальное → проксируем на GitHub Pages
-    const originUrl = new URL(url.pathname + url.search, ORIGIN);
-    const response = await fetch(originUrl, {
-      headers: request.headers,
-      method: request.method,
+    // Браузер → вернуть HTML
+    let path = url.pathname;
+    if (path === "/" || path === "") path = "/index.html";
+
+    const response = await fetch(`${RAW_GITHUB}${path}`, {
+      redirect: "follow"
     });
 
-    return response;
+    // Определяем content-type по расширению
+    const ext = path.split('.').pop();
+    const contentTypes = {
+      html: "text/html; charset=utf-8",
+      css: "text/css; charset=utf-8",
+      js: "application/javascript; charset=utf-8",
+      png: "image/png",
+      jpg: "image/jpeg",
+      svg: "image/svg+xml",
+    };
+
+    return new Response(response.body, {
+      status: response.status,
+      headers: {
+        "content-type": contentTypes[ext] || "text/plain",
+        "cache-control": "public, max-age=3600"
+      }
+    });
   }
 };
