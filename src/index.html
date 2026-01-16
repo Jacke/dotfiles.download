@@ -102,21 +102,20 @@
     </section>
 
     <!-- Latest Changes -->
-    {% if site.changelog and site.changelog.length %}
+    {% if site.changelog[0] %}
     <section class="content-section changelog-preview">
       <span class="label">Latest Changes</span>
       <h2>What's new in v{{ site.version }}</h2>
 
-      {% set latest = site.changelog[0] %}
-      {% if latest %}
       <ul class="changes-list">
-        {% for change in latest.changes | slice(0, 4) %}
-        <li>{{ change }}</li>
+        {% for change in site.changelog[0].changes %}
+        {% if loop.index <= 4 %}
+        <li>{{ change | safe }}</li>
+        {% endif %}
         {% endfor %}
       </ul>
-      {% if latest.changes.length > 4 %}
-      <p class="more-changes">and {{ latest.changes.length - 4 }} more changes...</p>
-      {% endif %}
+      {% if site.changelog[0].changes.length > 4 %}
+      <p class="more-changes">and {{ site.changelog[0].changes.length - 4 }} more changes...</p>
       {% endif %}
 
       <a href="/changelog/" class="changelog-link">View full changelog →</a>

@@ -149,13 +149,16 @@ const BANNER = \`
 \${line(\`  \${c.magenta}\${c.bold}STACK\${c.reset}                                                           \`)}
 \${sep}
 \${empty}
-${stack.featured.map(s => `\${line(\`   \${c.cyan}${s.name.padEnd(11)}\${c.reset} ${s.desc.padEnd(W - 16)}   \`)}`).join('\n')}
-\${line(\`   \${c.dim}...and ${stack.other.join(', ')}\${c.reset}                    \`)}
+\${line(\`   \${c.cyan}Chezmoi\${c.reset}     Sync dotfiles across machines                     \`)}
+\${line(\`   \${c.cyan}Starship\${c.reset}    Smart, minimal prompt                             \`)}
+\${line(\`   \${c.cyan}fzf\${c.reset}         Fuzzy finder for everything                       \`)}
+\${line(\`   \${c.cyan}zoxide\${c.reset}      Smart cd that learns your habits                  \`)}
+\${line(\`   \${c.dim}...and Sheldon, ASDF, eza, bat, ripgrep, fd\${c.reset}                  \`)}
 \${empty}
 \${sep}
 \${empty}
-\${line(\`   \${c.dim}GitHub:\${c.reset}  \${c.brightBlue}${site.github}\${c.reset}                             \`)}
-\${line(\`   \${c.dim}Web:\${c.reset}     \${c.brightBlue}${site.url}\${c.reset}                            \`)}
+\${line(\`   \${c.dim}GitHub:\${c.reset}  \${c.brightBlue}https://github.com/Jacke/iam\${c.reset}                        \`)}
+\${line(\`   \${c.dim}Web:\${c.reset}     \${c.brightBlue}https://dotfiles.download\${c.reset}                           \`)}
 \${empty}
 \${bot}
 
