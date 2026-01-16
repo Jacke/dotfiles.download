@@ -141,9 +141,9 @@ const BANNER = \`
 \${line(\`  \${c.blue}\${c.bold}PERFORMANCE\${c.reset}                                                      \`)}
 \${sep}
 \${empty}
-\${line(\`   \${c.dim}${performance[0].name}\${c.reset}   \${c.red}████████████████████████████████████\${c.reset}   \${c.dim}${performance[0].time}\${c.reset}    \`)}
-\${line(\`   \${c.dim}${performance[1].name}\${c.reset}      \${c.yellow}██████████████████████\${c.reset}                 \${c.dim}${performance[1].time}\${c.reset}    \`)}
-\${line(\`   \${c.brightWhite}~(iam)\${c.reset}      \${c.green}███████\${c.reset}                                \${c.brightGreen}${performance[2].time}\${c.reset}    \`)}
+\${line(\`   \${c.brightWhite}~(iam)\${c.reset}      \${c.green}███████\${c.reset}                                \${c.brightGreen}~150ms\${c.reset}    \`)}
+\${line(\`   \${c.dim}Prezto\${c.reset}      \${c.yellow}██████████████████████\${c.reset}                 \${c.dim}~500ms\${c.reset}    \`)}
+\${line(\`   \${c.dim}Oh-My-Zsh\${c.reset}   \${c.red}████████████████████████████████████\${c.reset}   \${c.dim}~800ms\${c.reset}    \`)}
 \${empty}
 \${sep}
 \${line(\`  \${c.magenta}\${c.bold}STACK\${c.reset}                                                           \`)}
