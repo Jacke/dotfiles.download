@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/style.css?v=2">
+  <link rel="stylesheet" href="/assets/style.css?v=3">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>~</text></svg>">
 </head>
 <body>
@@ -74,7 +74,7 @@
           <span class="perf-time">~500ms</span>
         </div>
         <div class="perf-row">
-          <span class="perf-name">~(iam)</span>
+          <span class="perf-name">~(iam) dotfiles</span>
           <div class="perf-track">
             <div class="perf-bar perf-fast" style="width: 19%"></div>
           </div>
@@ -88,36 +88,9 @@
       <span class="label">What's included</span>
       <h2>Everything you need</h2>
 
-      <div class="stack-list">
-        <div class="stack-item">
-          <h3>Sync across machines</h3>
-          <p><strong>Chezmoi</strong> keeps your dotfiles in sync. Change something on your laptop — it's on your server in seconds. Templates handle machine-specific differences.</p>
-        </div>
-
-        <div class="stack-item">
-          <h3>Fast plugin loading</h3>
-          <p><strong>Sheldon</strong> manages zsh plugins without bloat. Written in Rust, it loads plugins in parallel and defers non-essential ones until after your prompt appears.</p>
-        </div>
-
-        <div class="stack-item">
-          <h3>Smart prompt</h3>
-          <p><strong>Starship</strong> shows git status, directory, language versions — but only when relevant. No clutter, no lag, works everywhere.</p>
-        </div>
-
-        <div class="stack-item">
-          <h3>Version management</h3>
-          <p>One tool for all runtimes. <strong>ASDF</strong> handles Node, Python, Ruby, Go, Rust — per-project versions via <code>.tool-versions</code>.</p>
-        </div>
-
-        <div class="stack-item">
-          <h3>Modern CLI tools</h3>
-          <p><strong>eza</strong> replaces ls, <strong>bat</strong> replaces cat, <strong>ripgrep</strong> replaces grep, <strong>fd</strong> replaces find. Faster, prettier, actually usable.</p>
-        </div>
-
-        <div class="stack-item">
-          <h3>Smart navigation</h3>
-          <p><strong>Zoxide</strong> learns your habits — type <code>z proj</code> to jump to <code>~/work/projects</code>. <strong>fzf</strong> adds fuzzy search to files, history, branches.</p>
-        </div>
+      <div class="stack-compact">
+        <p><strong>Chezmoi</strong> syncs dotfiles across machines. <strong>Sheldon</strong> loads zsh plugins fast. <strong>Starship</strong> for a smart prompt. <strong>ASDF</strong> manages Node, Python, Ruby versions.</p>
+        <p><strong>eza</strong>, <strong>bat</strong>, <strong>ripgrep</strong>, <strong>fd</strong> — modern replacements for ls, cat, grep, find. <strong>Zoxide</strong> + <strong>fzf</strong> for fast navigation.</p>
       </div>
     </section>
 

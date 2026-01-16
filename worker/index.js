@@ -3,43 +3,81 @@ const c = {
   reset: '\x1b[0m',
   bold: '\x1b[1m',
   dim: '\x1b[2m',
+  italic: '\x1b[3m',
   // Colors
-  cyan: '\x1b[36m',
-  brightCyan: '\x1b[96m',
-  blue: '\x1b[34m',
-  brightBlue: '\x1b[94m',
+  black: '\x1b[30m',
+  red: '\x1b[31m',
   green: '\x1b[32m',
-  brightGreen: '\x1b[92m',
   yellow: '\x1b[33m',
-  white: '\x1b[97m',
+  blue: '\x1b[34m',
+  magenta: '\x1b[35m',
+  cyan: '\x1b[36m',
+  white: '\x1b[37m',
   gray: '\x1b[90m',
+  // Bright colors
+  brightRed: '\x1b[91m',
+  brightGreen: '\x1b[92m',
+  brightYellow: '\x1b[93m',
+  brightBlue: '\x1b[94m',
+  brightMagenta: '\x1b[95m',
+  brightCyan: '\x1b[96m',
+  brightWhite: '\x1b[97m',
 };
 
-// ASCII art banner для curl с цветами
+// Beautiful TUI banner
 const BANNER = `
-${c.brightCyan}${c.bold}
-    ██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
-    ██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
-    ██║  ██║██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗
-    ██║  ██║██║   ██║   ██║   ██╔══╝  ██║██║     ██╔══╝  ╚════██║
-    ██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
-    ╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
-${c.reset}
-${c.gray}                        ~ ( i a m )  v1.0${c.reset}
-
-${c.white}${c.bold}    Minimal. Fast. Opinionated.${c.reset}
-${c.gray}    Shell startup: ${c.brightGreen}~150ms${c.gray} (vs ~800ms Oh-My-Zsh)${c.reset}
-
-${c.yellow}${c.bold}    INSTALL${c.reset}
-${c.gray}    ───────${c.reset}
-${c.brightGreen}    source <(curl -sL dotfiles.download/install)${c.reset}
-
-${c.blue}${c.bold}    STACK${c.reset}
-${c.gray}    ─────${c.reset}
-${c.cyan}    Chezmoi · Sheldon · Starship · ASDF
-    fzf · ripgrep · eza · bat · zoxide${c.reset}
-
-${c.gray}    GitHub: ${c.brightBlue}https://github.com/Jacke/-${c.reset}
+${c.gray}╭──────────────────────────────────────────────────────────────────╮${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.brightCyan}${c.bold}██████╗   ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.brightCyan}${c.bold}██╔══██╗ ██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}██║  ██║ ██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}██║  ██║ ██║   ██║   ██║   ██╔══╝  ██║██║     ██╔══╝  ╚════██║${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.blue}██████╔╝ ╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.blue}╚═════╝   ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                      ${c.dim}~(iam) dotfiles  v1.0${c.reset}                       ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}├──────────────────────────────────────────────────────────────────┤${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.brightWhite}${c.bold}Your shell, but faster.${c.reset}                                      ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.white}A complete shell environment that installs in one command.${c.reset}    ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.white}Stop wasting time configuring zsh from scratch.${c.reset}               ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}├──────────────────────────────────────────────────────────────────┤${c.reset}
+${c.gray}│${c.reset}  ${c.yellow}${c.bold}INSTALL${c.reset}                                                        ${c.gray}│${c.reset}
+${c.gray}├──────────────────────────────────────────────────────────────────┤${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.brightGreen}source <(curl -sL dotfiles.download/install)${c.reset}                   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}├──────────────────────────────────────────────────────────────────┤${c.reset}
+${c.gray}│${c.reset}  ${c.blue}${c.bold}PERFORMANCE${c.reset}                                                     ${c.gray}│${c.reset}
+${c.gray}├──────────────────────────────────────────────────────────────────┤${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.dim}Oh-My-Zsh${c.reset}    ${c.red}████████████████████████████████████${c.reset}  ${c.dim}~800ms${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.dim}Prezto${c.reset}       ${c.yellow}██████████████████████${c.reset}                ${c.dim}~500ms${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.brightWhite}~(iam)${c.reset}        ${c.green}███████${c.reset}                               ${c.brightGreen}~150ms${c.reset}   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}├──────────────────────────────────────────────────────────────────┤${c.reset}
+${c.gray}│${c.reset}  ${c.magenta}${c.bold}STACK${c.reset}                                                          ${c.gray}│${c.reset}
+${c.gray}├──────────────────────────────────────────────────────────────────┤${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}Chezmoi${c.reset}      Sync dotfiles across machines                    ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}Sheldon${c.reset}      Fast zsh plugin manager (Rust)                   ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}Starship${c.reset}     Smart, minimal prompt                            ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}ASDF${c.reset}         One tool for all runtime versions                ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}fzf${c.reset}          Fuzzy finder for everything                      ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}eza${c.reset}          Modern ls replacement                            ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}bat${c.reset}          cat with syntax highlighting                     ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}ripgrep${c.reset}      Fast grep replacement                            ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.cyan}zoxide${c.reset}       Smart cd that learns your habits                 ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}├──────────────────────────────────────────────────────────────────┤${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.dim}GitHub:${c.reset}  ${c.brightBlue}https://github.com/Jacke/-${c.reset}                          ${c.gray}│${c.reset}
+${c.gray}│${c.reset}   ${c.dim}Web:${c.reset}     ${c.brightBlue}https://dotfiles.download${c.reset}                           ${c.gray}│${c.reset}
+${c.gray}│${c.reset}                                                                  ${c.gray}│${c.reset}
+${c.gray}╰──────────────────────────────────────────────────────────────────╯${c.reset}
 
 `;
 
@@ -94,7 +132,7 @@ export default {
       status: response.status,
       headers: {
         "content-type": contentTypes[ext] || "text/plain",
-        "cache-control": "public, max-age=3600"
+        "cache-control": "public, max-age=300"
       }
     });
   }

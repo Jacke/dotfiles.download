@@ -50,7 +50,7 @@ main {
 /* Hero
    ========================================================================== */
 .hero {
-  padding: 80px 0 48px;
+  padding: 60px 0 32px;
   text-align: center;
 }
 
@@ -78,7 +78,7 @@ main {
 /* Install Box
    ========================================================================== */
 .install {
-  padding: 0 0 64px;
+  padding: 0 0 40px;
 }
 
 .install-box {
@@ -151,7 +151,7 @@ main {
 /* Content Sections
    ========================================================================== */
 .content-section {
-  padding: 64px 0;
+  padding: 40px 0;
   border-top: 1px solid var(--gray-800);
 }
 
@@ -192,17 +192,17 @@ main {
 /* Performance Chart
    ========================================================================== */
 .perf-chart {
-  margin-top: 32px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .perf-row {
   display: grid;
-  grid-template-columns: 100px 1fr 70px;
+  grid-template-columns: 110px 1fr 70px;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .perf-name {
@@ -234,63 +234,35 @@ main {
   text-align: right;
 }
 
-/* Stack List (What's included)
+/* Stack Compact (What's included)
    ========================================================================== */
-.stack-list {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.stack-compact {
+  margin-top: 16px;
 }
 
-.stack-item {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--gray-800);
-}
-
-.stack-item:first-child {
-  padding-top: 0;
-}
-
-.stack-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.stack-item h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-
-.stack-item p {
+.stack-compact p {
   font-size: 0.9375rem;
   color: var(--gray-400);
-  line-height: 1.65;
+  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
-.stack-item strong {
+.stack-compact p:last-child {
+  margin-bottom: 0;
+}
+
+.stack-compact strong {
   color: var(--gray-300);
   font-weight: 500;
-}
-
-.stack-item code {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8125rem;
-  background: var(--gray-900);
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: var(--green);
 }
 
 /* Features Grid
    ========================================================================== */
 .features {
-  margin-top: 32px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px 48px;
+  gap: 20px 32px;
 }
 
 .feature h3 {
@@ -309,7 +281,7 @@ main {
 /* CTA
    ========================================================================== */
 .cta {
-  padding: 64px 0;
+  padding: 40px 0;
   text-align: center;
   border-top: 1px solid var(--gray-800);
 }
