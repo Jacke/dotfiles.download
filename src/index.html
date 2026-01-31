@@ -23,7 +23,15 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <img src="/assets/logo.png" alt="{{ site.title }}" class="logo">
+      <!-- Logo with ASCII overlay on laptop screen -->
+      <div class="hero-image-container">
+        <img src="/assets/logo.png" alt="{{ site.title }}" class="logo">
+        <div class="screen-overlay">
+          <pre class="ascii-logo" aria-hidden="true"><span class="ascii-small">█▀▄ █▀█ ▀█▀ █▀▀ █ █   █▀▀ █▀</span>
+<span class="ascii-small">█▄▀ █▄█  █  █▀  █ █▄▄ ██▄ ▄█</span></pre>
+          <div class="scanlines"></div>
+        </div>
+      </div>
       <p class="tagline">Your shell, but faster.</p>
       <p class="subtitle">A complete shell environment that installs in one command.<br>Stop wasting time configuring zsh from scratch.</p>
     </section>
@@ -96,6 +104,84 @@
         <div class="feature">
           <h3>{{ feature.title }}</h3>
           <p>{{ feature.desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="content-section demo-section">
+      <span class="label">See it in action</span>
+      <h2>Interactive TUI</h2>
+      <p>Everything managed through a beautiful terminal interface powered by <a href="https://github.com/charmbracelet/gum">gum</a>.</p>
+
+      <div class="demo-container">
+        <img src="/assets/demos/main-menu.gif" alt="Serotonin TUI Demo" class="demo-gif" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Plugin Packs -->
+    <section class="content-section">
+      <span class="label">Modular</span>
+      <h2>Plugin Packs</h2>
+      <p>Enable only what you need. Each pack adds tools, aliases, and completions for a specific workflow.</p>
+
+      <div class="packs-grid">
+        {% for pack in packs.packs %}
+        <div class="pack-card">
+          <div class="pack-header">
+            <span class="pack-icon">{{ pack.icon }}</span>
+            <span class="pack-name">{{ pack.name }}</span>
+          </div>
+          <p class="pack-desc">{{ pack.desc }}</p>
+          <div class="pack-tools">{{ pack.tools | join(", ") }}</div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <p class="muted">Run <code>dotfiles packs list</code> to see all available packs.</p>
+    </section>
+
+    <!-- Themes -->
+    <section class="content-section">
+      <span class="label">Customizable</span>
+      <h2>Starship Themes</h2>
+      <p>Choose from beautiful preset themes or create your own. Switch themes instantly.</p>
+
+      <div class="themes-showcase">
+        {% for theme in themes.themes %}
+        <div class="theme-card">
+          <div class="theme-preview" style="background: linear-gradient(135deg, {{ theme.colors[0] }}22, {{ theme.colors[1] }}22)">
+            <code class="theme-prompt">{{ theme.preview }}</code>
+          </div>
+          <div class="theme-info">
+            <strong>{{ theme.name }}</strong>
+            <span class="theme-desc">{{ theme.desc }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <p class="muted">Run <code>dotfiles themes list</code> to preview all themes.</p>
+    </section>
+
+    <!-- Commands -->
+    <section class="content-section">
+      <span class="label">Reference</span>
+      <h2>Commands</h2>
+
+      <div class="commands-list">
+        {% for category, label in commands.categories %}
+        <div class="cmd-category">
+          <h3>{{ label }}</h3>
+          {% for cmd in commands.commands %}
+          {% if cmd.category == category %}
+          <div class="cmd-row">
+            <code>{{ cmd.cmd }}</code>
+            <span>{{ cmd.desc }}</span>
+          </div>
+          {% endif %}
+          {% endfor %}
         </div>
         {% endfor %}
       </div>
