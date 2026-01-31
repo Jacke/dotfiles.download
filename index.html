@@ -23,7 +23,15 @@
   <main>
     <!-- Hero -->
     <section class="hero">
-      <img src="/assets/logo.png" alt="~(iam) Dotfiles" class="logo">
+      <!-- Logo with ASCII overlay on laptop screen -->
+      <div class="hero-image-container">
+        <img src="/assets/logo.png" alt="~(iam) Dotfiles" class="logo">
+        <div class="screen-overlay">
+          <pre class="ascii-logo" aria-hidden="true"><span class="ascii-small">█▀▄ █▀█ ▀█▀ █▀▀ █ █   █▀▀ █▀</span>
+<span class="ascii-small">█▄▀ █▄█  █  █▀  █ █▄▄ ██▄ ▄█</span></pre>
+          <div class="scanlines"></div>
+        </div>
+      </div>
       <p class="tagline">Your shell, but faster.</p>
       <p class="subtitle">A complete shell environment that installs in one command.<br>Stop wasting time configuring zsh from scratch.</p>
     </section>
@@ -134,6 +142,53 @@
           <h3>Hackable</h3>
           <p>Clean structure. Easy to understand and extend.</p>
         </div>
+        
+      </div>
+    </section>
+
+    <!-- Demo -->
+    <section class="content-section demo-section">
+      <span class="label">See it in action</span>
+      <h2>Interactive TUI</h2>
+      <p>Everything managed through a beautiful terminal interface powered by <a href="https://github.com/charmbracelet/gum">gum</a>.</p>
+
+      <div class="demo-container">
+        <img src="/assets/demos/main-menu.gif" alt="Serotonin TUI Demo" class="demo-gif" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Plugin Packs -->
+    <section class="content-section">
+      <span class="label">Modular</span>
+      <h2>Plugin Packs</h2>
+      <p>Enable only what you need. Each pack adds tools, aliases, and completions for a specific workflow.</p>
+
+      <div class="packs-grid">
+        
+      </div>
+
+      <p class="muted">Run <code>dotfiles packs list</code> to see all available packs.</p>
+    </section>
+
+    <!-- Themes -->
+    <section class="content-section">
+      <span class="label">Customizable</span>
+      <h2>Starship Themes</h2>
+      <p>Choose from beautiful preset themes or create your own. Switch themes instantly.</p>
+
+      <div class="themes-showcase">
+        
+      </div>
+
+      <p class="muted">Run <code>dotfiles themes list</code> to preview all themes.</p>
+    </section>
+
+    <!-- Commands -->
+    <section class="content-section">
+      <span class="label">Reference</span>
+      <h2>Commands</h2>
+
+      <div class="commands-list">
         
       </div>
     </section>
