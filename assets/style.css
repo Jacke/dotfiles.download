@@ -71,7 +71,7 @@ main {
 /* Screen overlay - positioned on the laptop screen */
 .screen-overlay {
   position: absolute;
-  top: 266px;
+  top: 261px;
   left: 13%;
   width: 30%;
   height: 22%;
@@ -863,10 +863,10 @@ footer a:hover {
   }
 
   .screen-overlay {
-    top: 40px;
-    left: 3%;
-    width: 42%;
-    height: 50%;
+    top: 63%;
+    left: 20%;
+    width: 16%;
+    height: 19%;
   }
 
   .ascii-logo {
