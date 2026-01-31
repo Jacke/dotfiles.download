@@ -80,7 +80,7 @@ main {
   justify-content: center;
   overflow: hidden;
   border-radius: 2px;
-  transform: perspective(503px) rotateX(5deg) rotateY(-3deg) skewX(-1deg) skewY(1deg) rotate(2deg);
+  transform: perspective(503px) rotateX(5deg) rotateY(-3deg) skewX(-1deg) skewY(1deg) rotate(1.7deg);
 }
 
 .ascii-logo {
